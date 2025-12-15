@@ -10,6 +10,7 @@ import Gallery from "./pages/Gallery";
 import DJPlayX from "./pages/DJPlayX";
 import Artists from "./pages/Artists";
 import Contact from "./pages/Contact";
+import AdminImages from "./pages/AdminImages";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/dj-playx" element={<DJPlayX />} />
           <Route path="/artists" element={<Artists />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin/images" element={<AdminImages />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

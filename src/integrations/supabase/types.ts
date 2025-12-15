@@ -68,6 +68,30 @@ export type Database = {
         }
         Relationships: []
       }
+      generated_images: {
+        Row: {
+          category: string
+          created_at: string
+          id: string
+          prompt: string
+          storage_path: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          id?: string
+          prompt: string
+          storage_path: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          id?: string
+          prompt?: string
+          storage_path?: string
+        }
+        Relationships: []
+      }
       newsletter_signups: {
         Row: {
           created_at: string
