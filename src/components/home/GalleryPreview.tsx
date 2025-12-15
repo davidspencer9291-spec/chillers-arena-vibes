@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import chillersVenue1 from "@/assets/chillers-venue-1.jpg";
 
 const previewImages = [
-  "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=600&q=80",
+  chillersVenue1,
   "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&q=80",
   "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80",
   "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80",
