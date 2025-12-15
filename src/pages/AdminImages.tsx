@@ -10,38 +10,93 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Loader2, Wand2, Trash2, Download, Image as ImageIcon } from "lucide-react";
 
-const presetPrompts = [
+const presetCategories = [
   {
-    label: "Nightclub Crowd",
-    prompt: "Vibrant African nightclub scene with energetic crowd dancing under neon blue and pink lights, urban atmosphere, concert photography style, high energy party vibe"
+    category: "Chiller's Arena Specials",
+    presets: [
+      {
+        label: "Keffi Nightlife",
+        prompt: "Nigerian street-style nightclub exterior at night in Keffi, neon signs glowing, excited crowd arriving dressed stylishly, urban African atmosphere, warm humid evening, street vendors nearby"
+      },
+      {
+        label: "Afrobeats Live",
+        prompt: "Nigerian artist performing live Afrobeats on stage, crowd going wild with hands up, green and white accent lights, concert energy, Lagos nightclub vibes"
+      },
+      {
+        label: "Nigerian VIP",
+        prompt: "Upscale Nigerian nightclub VIP section with champagne towers and bottle sparklers, elegant African party elite celebrating, gold and purple ambient lighting, luxury setting"
+      },
+      {
+        label: "Owambe Party",
+        prompt: "Colorful Nigerian owambe celebration in modern nightclub, traditional party vibes mixed with neon club lighting, aso-ebi style, joyful dancing, vibrant energy"
+      },
+      {
+        label: "Amapiano Night",
+        prompt: "Amapiano dance party in Nigerian club, stylish dancers in trendy outfits, deep house atmosphere, smoke effects, blue and orange lighting"
+      },
+      {
+        label: "Ladies Night",
+        prompt: "Glamorous Nigerian women celebrating ladies night, elegant dresses and high fashion, champagne glasses, pink and gold lighting, upscale nightclub atmosphere"
+      },
+      {
+        label: "Birthday Bash",
+        prompt: "Nigerian birthday celebration at nightclub with LED cake, sparklers, VIP booth setup, balloons and decorations, excited friends celebrating"
+      },
+      {
+        label: "Club Entrance",
+        prompt: "Excited crowd queuing at Nigerian nightclub entrance, bouncers at velvet rope, neon club sign, urban street scene, anticipation energy"
+      }
+    ]
   },
   {
-    label: "DJ Performance",
-    prompt: "Professional DJ performing on stage with dramatic spotlight beams and colorful laser effects, crowd silhouettes in foreground, concert photography, neon lighting"
+    category: "Club Scenes",
+    presets: [
+      {
+        label: "Dance Floor",
+        prompt: "Packed dance floor with people dancing, colorful LED lights from above, smoke machine effects, nightclub party atmosphere, silhouettes moving"
+      },
+      {
+        label: "Smoke & Lasers",
+        prompt: "Dense club atmosphere with smoke machines, cutting laser beams in multiple colors, silhouettes dancing, dramatic lighting effects"
+      },
+      {
+        label: "Stage Lights",
+        prompt: "Dramatic stage with concert lighting, spotlights and laser beams cutting through smoke, empty stage ready for performance"
+      },
+      {
+        label: "VIP Lounge",
+        prompt: "Stylish VIP lounge area in upscale nightclub with purple and gold ambient lighting, elegant decor, bottle service setup"
+      },
+      {
+        label: "After Party",
+        prompt: "Late night intimate club setting, low warm lights, relaxed sophisticated atmosphere, small groups conversing, end of night vibes"
+      }
+    ]
   },
   {
-    label: "Afrobeats Party",
-    prompt: "Exciting Afrobeats concert party with diverse crowd celebrating, colorful stage lights, Nigerian nightclub atmosphere, vibrant energy"
-  },
-  {
-    label: "VIP Lounge",
-    prompt: "Stylish VIP lounge area in upscale nightclub with purple and gold ambient lighting, elegant decor, bottle service setup"
-  },
-  {
-    label: "DJ Equipment",
-    prompt: "Close-up of professional DJ mixer and turntables with neon glow effects, smoke atmosphere, nightclub setting"
-  },
-  {
-    label: "Dance Floor",
-    prompt: "Packed dance floor with people dancing, colorful LED lights from above, smoke machine effects, nightclub party atmosphere"
-  },
-  {
-    label: "Stage Lights",
-    prompt: "Dramatic stage with concert lighting, spotlights and laser beams cutting through smoke, empty stage ready for performance"
-  },
-  {
-    label: "Artist Portrait",
-    prompt: "Professional portrait of a DJ artist with neon lighting, urban style, confident pose, nightclub background blur"
+    category: "Artists & DJs",
+    presets: [
+      {
+        label: "Nigerian DJ",
+        prompt: "Nigerian DJ spinning Afrobeats at mixer, green white green flag color accent lighting, professional equipment, focused performance, crowd visible"
+      },
+      {
+        label: "DJ Equipment",
+        prompt: "Close-up of professional DJ mixer and turntables with neon glow effects, smoke atmosphere, nightclub setting"
+      },
+      {
+        label: "Live Band",
+        prompt: "Nigerian live band performing on stage, brass section, energetic performance, colorful stage lights, audience engagement"
+      },
+      {
+        label: "Artist Portrait",
+        prompt: "Professional portrait of a DJ artist with neon lighting, urban style, confident pose, nightclub background blur"
+      },
+      {
+        label: "MC on Stage",
+        prompt: "Hype man with microphone on stage, crowd interaction, spotlight beam, energetic pose, Nigerian nightclub performance"
+      }
+    ]
   }
 ];
 
@@ -171,17 +226,26 @@ export default function AdminImages() {
                   <label className="text-sm text-muted-foreground mb-2 block">
                     Quick Presets
                   </label>
-                  <div className="flex flex-wrap gap-2">
-                    {presetPrompts.map((preset) => (
-                      <Button
-                        key={preset.label}
-                        variant="outline"
-                        size="sm"
-                        onClick={() => setPrompt(preset.prompt)}
-                        className="text-xs"
-                      >
-                        {preset.label}
-                      </Button>
+                  <div className="space-y-4 max-h-64 overflow-y-auto pr-2">
+                    {presetCategories.map((cat) => (
+                      <div key={cat.category}>
+                        <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">
+                          {cat.category}
+                        </p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {cat.presets.map((preset) => (
+                            <Button
+                              key={preset.label}
+                              variant="outline"
+                              size="sm"
+                              onClick={() => setPrompt(preset.prompt)}
+                              className="text-xs h-7"
+                            >
+                              {preset.label}
+                            </Button>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
