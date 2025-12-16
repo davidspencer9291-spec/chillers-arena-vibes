@@ -10,12 +10,12 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Location",
-    details: ["Gauta/Stadium Road", "By Sanbisa Market", "Keffi, Nasarawa State"],
+    details: ["Sabon Kasuwan, Opposite Keffi Modern Market", "Sambisa, Keffi 961101", "Nasarawa, Nigeria"],
   },
   {
     icon: Phone,
-    title: "Phone",
-    details: ["+234 801 234 5678", "+234 802 345 6789"],
+    title: "Phone / WhatsApp",
+    details: ["+234 701 003 3637"],
   },
   {
     icon: Mail,
@@ -30,11 +30,11 @@ const contactInfo = [
 ];
 
 const Contact = () => {
-  // Google Maps embed URL for Keffi, Nasarawa State
-  const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31457.52985076687!2d7.8499!3d8.8494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0c1f9d7e3a3d%3A0x8c3e5c1f9d7e3a3d!2sKeffi%2C%20Nasarawa!5e0!3m2!1sen!2sng!4v1640000000000!5m2!1sen!2sng";
+  // Google Maps embed URL for Keffi Modern Market area
+  const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.8!2d7.8728!3d8.8494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b5e8d8c2a0d%3A0x1234567890abcdef!2sKeffi%20Modern%20Market!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng";
   
-  const directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=Gauta+Stadium+Road+Keffi+Nasarawa+State+Nigeria";
-  const whatsappUrl = "https://wa.me/2348012345678?text=Hello%20Chiller's%20Arena!";
+  const directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=Keffi+Modern+Market+Sambisa+Keffi+Nasarawa+Nigeria";
+  const whatsappUrl = "https://wa.me/2347010033637?text=Hello%20Chiller's%20Arena!";
 
   return (
     <div className="min-h-screen bg-background">
@@ -131,7 +131,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <p className="font-bold text-sm">Chiller's Arena</p>
-                        <p className="text-xs text-muted-foreground">Keffi, Nigeria</p>
+                        <p className="text-xs text-muted-foreground">Sambisa, Keffi</p>
                       </div>
                     </div>
                   </div>
@@ -145,8 +145,8 @@ const Contact = () => {
                       How to Find Us
                     </h4>
                     <ul className="text-sm text-muted-foreground space-y-2">
-                      <li>• Located on Gauta/Stadium Road</li>
-                      <li>• Near Sanbisa Market</li>
+                      <li>• Opposite Keffi Modern Market</li>
+                      <li>• Sabon Kasuwan area, Sambisa</li>
                       <li>• Look for the neon lights!</li>
                       <li>• Parking available on-site</li>
                     </ul>
