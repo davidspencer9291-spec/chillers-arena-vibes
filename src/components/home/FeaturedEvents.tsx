@@ -2,31 +2,41 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const featuredEvents = [
   {
     id: 1,
-    title: "Chillers Sensation",
-    date: "Every Saturday",
-    time: "10 PM",
-    image: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&q=80",
-    description: "Weekly party featuring DJ Play X and guest DJs.",
+    title: "Keffi Mega Block Party",
+    date: "January 31, 2026",
+    time: "4 PM",
+    location: "Stadium Road, Keffi",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
+    description: "The biggest street party in Nasarawa State. Live performances, food vendors, and non-stop entertainment!",
+    badge: "MEGA EVENT",
+    highlight: true,
   },
   {
     id: 2,
-    title: "Keffi Mega Block Party",
-    date: "December 25, 2024",
-    time: "4 PM",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
-    description: "The biggest street party in Nasarawa State.",
+    title: "Chillers Sensation",
+    date: "Every Saturday",
+    time: "10 PM",
+    location: "Chiller's Arena",
+    image: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&q=80",
+    description: "Weekly party featuring DJ Play X and guest DJs spinning the hottest tracks.",
+    badge: "WEEKLY",
+    highlight: false,
   },
   {
     id: 3,
-    title: "New Year's Eve Countdown",
-    date: "December 31, 2024",
+    title: "Valentine's Night Special",
+    date: "February 14, 2026",
     time: "9 PM",
+    location: "Chiller's Arena",
     image: "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=800&q=80",
-    description: "Ring in the new year with live performances.",
+    description: "A romantic evening of love songs, couples' dance, and special performances.",
+    badge: "UPCOMING",
+    highlight: false,
   },
 ];
 
@@ -50,7 +60,12 @@ export function FeaturedEvents() {
           {featuredEvents.map((event, index) => (
             <Card
               key={event.id}
-              className="group bg-card border-border overflow-hidden hover:border-primary/50 transition-all duration-500 animate-slide-up"
+              className={cn(
+                "group bg-card border-border overflow-hidden transition-all duration-500 animate-slide-up",
+                event.highlight 
+                  ? "border-accent/50 shadow-[0_0_30px_rgba(255,215,0,0.15)]" 
+                  : "hover:border-primary/50"
+              )}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative aspect-[16/10] overflow-hidden">
@@ -60,12 +75,22 @@ export function FeaturedEvents() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
-                <div className="absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-bold">
-                  HOT
+                <div className={cn(
+                  "absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-bold",
+                  event.highlight 
+                    ? "bg-accent text-accent-foreground" 
+                    : event.badge === "WEEKLY" 
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-muted text-muted-foreground"
+                )}>
+                  {event.badge}
                 </div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-display font-bold mb-2 group-hover:text-primary transition-colors">
+                <h3 className={cn(
+                  "text-xl font-display font-bold mb-2 transition-colors",
+                  event.highlight ? "text-accent" : "group-hover:text-primary"
+                )}>
                   {event.title}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-4">{event.description}</p>
@@ -77,6 +102,10 @@ export function FeaturedEvents() {
                   <div className="flex items-center gap-1">
                     <Clock className="w-4 h-4 text-primary" />
                     {event.time}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <MapPin className="w-4 h-4 text-primary" />
+                    {event.location}
                   </div>
                 </div>
               </CardContent>
