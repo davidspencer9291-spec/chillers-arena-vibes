@@ -2,7 +2,7 @@ import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Card, CardContent } from "@/components/ui/card";
-import { Instagram, Music2 } from "lucide-react";
+import { Instagram, Music2, Youtube } from "lucide-react";
 
 const artists = [
   {
@@ -12,6 +12,8 @@ const artists = [
     bio: "Known for captivating vocals that blend Afrobeats with soulful melodies.",
     genres: ["Afrobeats", "Soul"],
     instagram: "https://instagram.com/rohi",
+    tiktok: "https://tiktok.com/@rohi",
+    youtube: "https://youtube.com/@rohi",
   },
   {
     name: "Killerverse",
@@ -20,6 +22,8 @@ const artists = [
     bio: "Lyrical wordsmith bringing fire bars and energy to every performance.",
     genres: ["Hip-Hop", "Rap"],
     instagram: "https://instagram.com/killerverse",
+    tiktok: "https://tiktok.com/@killerverse",
+    youtube: "https://youtube.com/@killerverse",
   },
   {
     name: "Jahku Beatz",
@@ -28,6 +32,8 @@ const artists = [
     bio: "Master producer crafting the beats that move Keffi's nightlife.",
     genres: ["Afro-House", "Amapiano"],
     instagram: "https://instagram.com/jahkubeatz",
+    tiktok: "https://tiktok.com/@jahkubeatz",
+    youtube: "https://youtube.com/@jahkubeatz",
   },
   {
     name: "Capt Karisma",
@@ -36,6 +42,8 @@ const artists = [
     bio: "The voice that hypes every crowd. Master of ceremonies and energy.",
     genres: ["MC", "Entertainment"],
     instagram: "https://instagram.com/captkarisma",
+    tiktok: "https://tiktok.com/@captkarisma",
+    youtube: "https://youtube.com/@captkarisma",
   },
   {
     name: "DJ Starboy",
@@ -44,6 +52,8 @@ const artists = [
     bio: "Rising star bringing fresh sounds from Lagos to Keffi.",
     genres: ["Afrobeats", "Dancehall"],
     instagram: "https://instagram.com/djstarboy",
+    tiktok: "https://tiktok.com/@djstarboy",
+    youtube: "https://youtube.com/@djstarboy",
   },
   {
     name: "Melody Queen",
@@ -52,6 +62,8 @@ const artists = [
     bio: "Sultry vocals and powerful performances that leave audiences speechless.",
     genres: ["R&B", "Afrobeats"],
     instagram: "https://instagram.com/melodyqueen",
+    tiktok: "https://tiktok.com/@melodyqueen",
+    youtube: "https://youtube.com/@melodyqueen",
   },
 ];
 
@@ -62,6 +74,8 @@ const team = [
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
     bio: "The mastermind behind the scenes, ensuring everything runs smoothly at Chiller's Arena.",
     instagram: "https://instagram.com/bigpuzzle",
+    tiktok: "https://tiktok.com/@bigpuzzle",
+    youtube: "https://youtube.com/@bigpuzzle",
   },
 ];
 
@@ -93,15 +107,33 @@ const Artists = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
                     
-                    {/* Social Link */}
-                    <a
-                      href={artist.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                    >
-                      <Instagram className="w-5 h-5" />
-                    </a>
+                    {/* Social Links */}
+                    <div className="absolute top-4 right-4 flex gap-2">
+                      <a
+                        href={artist.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 rounded-full bg-background/80 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                      >
+                        <Instagram className="w-4 h-4" />
+                      </a>
+                      <a
+                        href={artist.tiktok}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 rounded-full bg-background/80 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                      >
+                        <Music2 className="w-4 h-4" />
+                      </a>
+                      <a
+                        href={artist.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 rounded-full bg-background/80 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                      >
+                        <Youtube className="w-4 h-4" />
+                      </a>
+                    </div>
 
                     {/* Name Overlay */}
                     <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -153,14 +185,32 @@ const Artists = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
                     
-                    <a
-                      href={member.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
-                    >
-                      <Instagram className="w-5 h-5" />
-                    </a>
+                    <div className="absolute top-4 right-4 flex gap-2">
+                      <a
+                        href={member.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 rounded-full bg-background/80 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                      >
+                        <Instagram className="w-4 h-4" />
+                      </a>
+                      <a
+                        href={member.tiktok}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 rounded-full bg-background/80 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                      >
+                        <Music2 className="w-4 h-4" />
+                      </a>
+                      <a
+                        href={member.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 rounded-full bg-background/80 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                      >
+                        <Youtube className="w-4 h-4" />
+                      </a>
+                    </div>
 
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <h3 className="text-2xl font-display font-bold mb-1 group-hover:text-accent transition-colors">
