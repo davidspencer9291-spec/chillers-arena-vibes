@@ -66,9 +66,19 @@ const Contact = () => {
                           <div>
                             <h3 className="font-bold mb-1">{item.title}</h3>
                             {item.details.map((detail, i) => (
-                              <p key={i} className="text-sm text-muted-foreground">
-                                {detail}
-                              </p>
+                              item.title === "Phone / WhatsApp" ? (
+                                <a 
+                                  key={i} 
+                                  href={`tel:${detail.replace(/\s/g, '')}`}
+                                  className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                                >
+                                  {detail}
+                                </a>
+                              ) : (
+                                <p key={i} className="text-sm text-muted-foreground">
+                                  {detail}
+                                </p>
+                              )
                             ))}
                           </div>
                         </div>
