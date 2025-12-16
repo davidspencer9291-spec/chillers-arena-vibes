@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 
 const heroSlides = [
   {
-    title: "Keffi Mega Block Party",
-    subtitle: "The Biggest Street Party in Nasarawa",
-    date: "Coming Soon",
+    title: "Mega Block Party 0.1",
+    subtitle: "The First Wave - The Biggest Street Party in Nasarawa",
+    date: "January 31, 2026",
     image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1920&q=80",
   },
   {
